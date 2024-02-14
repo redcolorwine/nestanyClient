@@ -1,0 +1,43 @@
+.logoBlock {
+    height: 90vh;
+    width: 100%;
+    background-image: url('./../../media/backmain.jpg');
+    background-size: cover;
+    font-family: 'Century Gothic';
+}
+
+.logoBlock h1 {
+    position: absolute;
+    font-size: 48pt;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.catalog nav {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.catalog nav li {
+    background-color: red;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    font-family: 'Century Gothic';
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.catalog nav li:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}

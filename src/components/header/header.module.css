@@ -1,0 +1,62 @@
+.header {
+    font-family: 'Century Gothic';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 40px 10px 40px;
+    flex: 0 0 auto;
+}
+
+.header h2 {
+    font-size: 27pt;
+    color: red;
+}
+
+.logo {}
+
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav li {
+    display: inline;
+
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16pt;
+    font-weight: 900;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+nav li a:hover {
+    color: red;
+}
+
+.auth {
+    font-size: 16pt;
+    display: flex;
+    gap: 20px;
+}
+
+.auth a {
+    text-decoration: none;
+    color: red;
+}
+
+.auth img {
+
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.auth img:hover {
+    transform: scale(1.07, 1.07);
+}

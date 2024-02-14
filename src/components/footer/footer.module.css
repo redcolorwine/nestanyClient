@@ -1,0 +1,44 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: 'Century Gothic';
+    background-color: black;
+    color: white;
+    flex: 0 0 auto;
+    /* height: 200px; */
+}
+
+.logo {
+    align-self: center;
+}
+
+.logo h2 {
+    color: red;
+}
+
+.contacts {
+    display: block;
+}
+
+
+
+.menu h4, .contacts h4 {
+    margin-bottom: 10px;
+    color: red;
+}
+
+.contacts li {
+    display: block;
+    font-size: 10pt;
+}
+
+.bothFooter {
+    display: flex;
+    gap: 20px;
+}
+
+.bothFooter p {
+    font-size: 10pt;
+}

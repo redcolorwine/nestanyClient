@@ -1,0 +1,60 @@
+.cart {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.cartHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.backToMain {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+
+.backToMain:hover {
+    color: red;
+}
+
+.cartItems {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.totalPrice {
+    margin-top: 40px;
+    /* border: 1px solid gray; */
+    box-shadow: 0px 0px 5px 0px gray;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.totalP {}
+
+.orderNow{
+    background-color: red;
+    color:white;
+    border: none;
+    height: 40px;
+    font-size: 15pt;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.orderNow:hover{
+    background-color: black;
+
+}

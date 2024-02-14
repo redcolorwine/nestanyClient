@@ -1,0 +1,46 @@
+.itemPage {
+    background-image: url('./../../media/tshirtback.jpg');
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.itemPage h2 {
+    padding: 40px;
+    color: white;
+
+}
+
+.image_descr img {
+    width: 1000px;
+    height: 700px;
+    object-fit: cover;
+}
+
+.image_descr {
+    display: flex;
+    gap: 40px;
+    margin: 40px;
+    color: white;
+}
+
+.itemPage h3 {
+    padding: 5px;
+}
+
+.butButton {
+    display: block;
+    margin: 15px 0px 5px 0px;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    font-family: 'Century Gothic';
+    font-weight: 900;
+    font-size: 14pt;
+    border-radius: 5px;
+    cursor: pointer;
+}
