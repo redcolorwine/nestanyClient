@@ -45,7 +45,7 @@ const ItemPage = (props) => {
                         <h3>{oneCard.name}</h3>
                         <button className={cmedia.butButton}>Купить</button>
                         <p>Описание: {oneCard.description ? oneCard.description : 'в данный момент нет описания'}</p>
-                        <p>Состав: {currentCard[0].materials && currentCard[0].materials.map(mat => { return <>{` ` + mat}</> })}</p>
+                        {/* <p>Состав: {currentCard[0].materials && currentCard[0].materials.map(mat => { return <>{` ` + mat}</> })}</p> */}
                         <p>Цена: {oneCard.price ? oneCard.price : 'в данный момент нет центы'}</p>
                     </div>
                 </div>

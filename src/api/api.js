@@ -57,5 +57,40 @@ export const goodsAPI = {
         }).catch(err => {
             throw new Error(err.response.data.message)
         });
-    }
+    },
+    addItemToCart(goodId, userId) {
+        return instance.post(`/cart/add`, { goodId, userId }).then(response => {
+            return response
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    },
+    getCartItems(userId) {
+        return instance.get(`/cart/${userId}`).then(response => {
+            return response;
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    },
+    deleteCartItem(cartId) {
+        return instance.delete(`/cart/one/${cartId}`).then(response => {
+            return response;
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    },
+    updateItemCount(cartId, count) {
+        return instance.patch(`/cart/count/${cartId}`, { count }).then(response => {
+            return response;
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    },
+    updateTotalPrice(cartId, total_price) {
+        return instance.patch(`/cart/total-price/${cartId}`, { total_price }).then(response => {
+            return response;
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    },
 }

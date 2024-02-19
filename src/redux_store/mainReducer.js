@@ -27,6 +27,7 @@ const IS_LOADING = 'IS_LOADING';
 const SET_ERR_DATA = 'SET_ERR_DATA'
 const SET_ONE_CARD = 'SET_ONE_CARD';
 
+
 let initialState = {
     cards: [
         { id: 1, type: 'Свитшот', brand: 'nestany', name: 'nestany clothe', description: 'Отличный комфортный свитшот', materials: ['Хлопок', 'Эластан'], price: 4990, image: sw1 },

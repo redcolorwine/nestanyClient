@@ -14,7 +14,7 @@ const Main = forwardRef((props, ref) => {
     const [filterClothe, setFilter] = useState('');
 
     useEffect(() => {
-        dispatch(getCardsThunk(10, 0));
+        dispatch(getCardsThunk(30, 0));
     }, [])
 
     if (!cardsData) {
@@ -42,18 +42,6 @@ const Main = forwardRef((props, ref) => {
                 </nav>
             </div>
             <div className={cmedia.cards} ref={ref}>
-                {/* {cardsData && filterClothe === ''
-                    ?
-                    cardsData.map(card => {
-                        return (<Card id={card.id} key={card.id} image={card.image} name={card.name} type={card.type} price={card.price} />)
-                    })
-                    :
-                    cardsData.map(card => {
-                        if (card.type == filterClothe)
-                            return (<Card id={card.id} key={card.id} image={card.image} name={card.name} type={card.type} price={card.price} />)
-                    })
-
-                } */}
                 {serverCards.rows && serverCards.rows.map(card => {
                     return (<Card id={card.id} key={card.id} image={card.img} name={card.name} type={card.type} price={card.price} />)
                 })}
