@@ -8,6 +8,7 @@ const DELETE_CART_ITEM = 'DELETE_CART_ITEM';
 const UPDATE_ITEM_COUNT = 'UPDATE_ITEM_COUNT';
 const UPDATE_TOTAL_PRICE = 'UPDATE_TOTAL_PRICE';
 const ADD_PAYMENT = 'ADD_PAYMENT';
+const CHECK_PAYMENT_STATUS = 'CHECK_PAYMENT_STATUS';
 
 let initialState = {
     errData: '',
@@ -19,6 +20,7 @@ let initialState = {
     updatedTotalPrice: '',
     paymentData: '',
     amount: '',
+    paymentStatus: '',
 }
 
 let cartReducer = (state = initialState, action) => {
@@ -70,6 +72,12 @@ let cartReducer = (state = initialState, action) => {
                 paymentData: action.paymentData
             }
         }
+        case CHECK_PAYMENT_STATUS: {
+            return {
+                ...state,
+                paymentStatus: action.paymentStatus
+            }
+        }
         default: {
             return state;
         }
@@ -116,6 +124,11 @@ export const addPaymentCreator = (paymentData) => {
         type: ADD_PAYMENT, paymentData
     }
 }
+export const checkPaymentStatusCreator = (paymentStatus) => {
+    return {
+        type: CHECK_PAYMENT_STATUS, paymentStatus
+    }
+}
 export const addItemToCartThunk = (goodId, userId) => {
     return (dispatch) => {
         goodsAPI.addItemToCart(goodId, userId).then(response => {
@@ -145,6 +158,16 @@ export const deleteCartItemThunk = (cartId) => {
         })
     }
 }
+export const deleteAllCartThunk = (userId) => {
+    return (dispatch) => {
+
+        goodsAPI.deleteAllCart(userId).then(response => {
+            setIsLoading(true);
+            dispatch(deleteCartItem(response.data));
+            setIsLoading(false);
+        })
+    }
+}
 export const updateItemCountThunk = (cartId, count) => {
     return (dispatch) => {
         goodsAPI.updateItemCount(cartId, count).then(response => {
@@ -168,6 +191,15 @@ export const pay = (amount) => {
         paymentAPI.pay(amount).then(response => {
             setIsLoading(true);
             dispatch(addPaymentCreator(response));
+            setIsLoading(false);
+        })
+    }
+}
+export const checkPayment = (paymentId) => {
+    return (dispatch) => {
+        paymentAPI.checkPayment(paymentId).then(response => {
+            setIsLoading(true);
+            dispatch(checkPaymentStatusCreator(response));
             setIsLoading(false);
         })
     }

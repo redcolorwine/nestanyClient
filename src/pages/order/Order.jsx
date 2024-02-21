@@ -9,20 +9,24 @@ const Order = (props) => {
     const cartItems = useSelector(state => state.cart.cartItems);
     const dispatch = useDispatch();
     const paymentData = useSelector(state => state.cart.paymentData);
+    const paymentStatus = useSelector(state => state.cart.paymentStatus);
     const [totalPrice, setTotal] = useState(0);
+
     const addPay = async (amount) => {
         try {
             await dispatch(pay(amount))
+            console.log(paymentData);
             await window.location.replace(paymentData.confirmation.confirmation_url)
             // await history(paymentData.confirmation.confirmation_url)
             //нужно наверное удалить все товары из корзины
+           
         } catch (error) {
             console.log(error)
         }
 
     }
     useEffect(() => {
-     
+
         if (cartItems) {
             const totalP = cartItems.reduce(
                 function (sum, currentItem) {
@@ -33,7 +37,7 @@ const Order = (props) => {
             setTotal(totalP);
         }
 
-    }, [])
+    }, [paymentData])
     return (
         <div className={cmedia.order}>
             <div className={cmedia.orderWrapper}>
@@ -54,7 +58,7 @@ const Order = (props) => {
                         0
                     )}</p>
                 </div>
-                <button onClick={()=>addPay(totalPrice)}>Оформить заказ</button>
+                <button onClick={() => addPay(totalPrice)}>Оформить заказ</button>
                 <div className={cmedia.check}>
                     <input type="checkbox" name="ch1" id="" />
                     <label htmlFor="ch1">Согласен с условиями использования торговой площадкой</label>

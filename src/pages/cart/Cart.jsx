@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import cmedia from './cart.module.css';
 import { GoArrowLeft } from "react-icons/go";
-
+import { GoTrash } from "react-icons/go";
 import CartItem from '../../components/cartIem/CartItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCartItemsThunk } from '../../redux_store/cartReducer';
+import { deleteAllCartThunk, getCartItemsThunk } from '../../redux_store/cartReducer';
 import Preloader from '../../components/preloader/Preloader';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +18,10 @@ const Cart = (props) => {
     const updatedTotalPrice = useSelector(state => state.cart.updatedTotalPrice)
     const [totalPrice, setTotal] = useState(0);
     const history = useNavigate();
+
+    const delCart = (userId) => {
+        dispatch(deleteAllCartThunk(userId));
+    }
 
     useEffect(() => {
         if (localStorage.getItem('userId')) {
@@ -58,6 +62,10 @@ const Cart = (props) => {
                 <h2>Корзина</h2>
                 <a href='/' className={cmedia.backToMain}>Вернуться в магазин <GoArrowLeft size={25} /></a>
             </div>
+            <div className={cmedia.delAll}>
+                <p>Очистить корзину</p>
+                <GoTrash size={25} onClick={() => delCart(localStorage.getItem('userId'))} />
+            </div>
             <div className={cmedia.cartItems}>
                 {cartItems
                     ? cartItems.map(cartItem => {
@@ -74,7 +82,7 @@ const Cart = (props) => {
                     <p className={cmedia.totalP}>{totalPrice} P.</p>
 
                 </div>
-                <button className={cmedia.orderNow} onClick={()=>history('/order')}>Заказать</button>
+                <button className={cmedia.orderNow} onClick={() => history('/order')}>Заказать</button>
             </div>
         </div>
     )

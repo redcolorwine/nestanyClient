@@ -79,6 +79,13 @@ export const goodsAPI = {
             throw new Error(err.response.data.message)
         });
     },
+    deleteAllCart(userId) {
+        return instance.delete(`/cart/all/${userId}`).then(response => {
+            return response;
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    },
     updateItemCount(cartId, count) {
         return instance.patch(`/cart/count/${cartId}`, { count }).then(response => {
             return response;
@@ -98,6 +105,13 @@ export const goodsAPI = {
 export const paymentAPI = {
     pay(amount) {
         return instance.post(`/payment`, { amount }).then(response => {
+            return response.data;
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    },
+    checkPayment(paymentId) {
+        return instance.post(`/payment/check`, { paymentId }).then(response => {
             return response.data;
         }).catch(err => {
             throw new Error(err.response.data.message)
