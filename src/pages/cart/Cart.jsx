@@ -6,6 +6,7 @@ import CartItem from '../../components/cartIem/CartItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCartItemsThunk } from '../../redux_store/cartReducer';
 import Preloader from '../../components/preloader/Preloader';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = (props) => {
 
@@ -16,6 +17,7 @@ const Cart = (props) => {
     const updatedItem = useSelector(state => state.cart.updatedItem);
     const updatedTotalPrice = useSelector(state => state.cart.updatedTotalPrice)
     const [totalPrice, setTotal] = useState(0);
+    const history = useNavigate();
 
     useEffect(() => {
         if (localStorage.getItem('userId')) {
@@ -72,7 +74,7 @@ const Cart = (props) => {
                     <p className={cmedia.totalP}>{totalPrice} P.</p>
 
                 </div>
-                <button className={cmedia.orderNow}>Заказать</button>
+                <button className={cmedia.orderNow} onClick={()=>history('/order')}>Заказать</button>
             </div>
         </div>
     )

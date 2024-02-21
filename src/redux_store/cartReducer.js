@@ -1,4 +1,4 @@
-import { goodsAPI } from "../api/api";
+import { goodsAPI, paymentAPI } from "../api/api";
 
 const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CARD';
 const GET_CART_ITEMS = 'GET_CART_ITEMS';
@@ -6,7 +6,8 @@ const IS_LOADING = 'IS_LOADING';
 const SET_ERR_DATA = 'SET_ERR_DATA';
 const DELETE_CART_ITEM = 'DELETE_CART_ITEM';
 const UPDATE_ITEM_COUNT = 'UPDATE_ITEM_COUNT';
-const UPDATE_TOTAL_PRICE = 'UPDATE_TOTAL_PRICE'
+const UPDATE_TOTAL_PRICE = 'UPDATE_TOTAL_PRICE';
+const ADD_PAYMENT = 'ADD_PAYMENT';
 
 let initialState = {
     errData: '',
@@ -15,7 +16,9 @@ let initialState = {
     isLoading: false,
     deleteItemInfo: '',
     updatedItem: '',
-    updatedTotalPrice: ''
+    updatedTotalPrice: '',
+    paymentData: '',
+    amount: '',
 }
 
 let cartReducer = (state = initialState, action) => {
@@ -61,6 +64,12 @@ let cartReducer = (state = initialState, action) => {
                 updatedTotalPrice: action.updatedTotalPrice
             }
         }
+        case ADD_PAYMENT: {
+            return {
+                ...state,
+                paymentData: action.paymentData
+            }
+        }
         default: {
             return state;
         }
@@ -100,6 +109,11 @@ export const updateItemCount = (updatedItem) => {
 export const updateTotalPrice = (updatedTotalPrice) => {
     return {
         type: UPDATE_TOTAL_PRICE, updatedTotalPrice
+    }
+}
+export const addPaymentCreator = (paymentData) => {
+    return {
+        type: ADD_PAYMENT, paymentData
     }
 }
 export const addItemToCartThunk = (goodId, userId) => {
@@ -145,6 +159,15 @@ export const updateTotalPriceThunk = (cartId, total_price) => {
         goodsAPI.updateTotalPrice(cartId, total_price).then(response => {
             setIsLoading(true);
             dispatch(updateTotalPrice(response.data));
+            setIsLoading(false);
+        })
+    }
+}
+export const pay = (amount) => {
+    return (dispatch) => {
+        paymentAPI.pay(amount).then(response => {
+            setIsLoading(true);
+            dispatch(addPaymentCreator(response));
             setIsLoading(false);
         })
     }

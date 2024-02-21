@@ -9,6 +9,7 @@ import About from './pages/about/About';
 import Delivery from './pages/delivery/Delivery';
 import { useRef } from 'react';
 import Cart from './pages/cart/Cart';
+import Order from './pages/order/Order';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/delivery' element={<Delivery />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/order' element={<Order/>}/>
         </Routes>
 
       </div>

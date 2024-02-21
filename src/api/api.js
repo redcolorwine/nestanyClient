@@ -94,3 +94,13 @@ export const goodsAPI = {
         });
     },
 }
+
+export const paymentAPI = {
+    pay(amount) {
+        return instance.post(`/payment`, { amount }).then(response => {
+            return response.data;
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    }
+}
