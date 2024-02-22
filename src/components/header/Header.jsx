@@ -86,6 +86,7 @@ const Header = (props) => {
                 <li><NavLink to="/">ГЛАВНАЯ</NavLink></li>
                 <li><NavLink to="/delivery">ДОСТАВКА</NavLink></li>
                 <li><NavLink to="/about">О НАС</NavLink></li>
+                <li><NavLink to="/contacts">КОНТАКТЫ</NavLink></li>
             </nav>
             <div className={cmedia.authBlock}>
                 {email

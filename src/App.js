@@ -10,6 +10,7 @@ import Delivery from './pages/delivery/Delivery';
 import { useRef } from 'react';
 import Cart from './pages/cart/Cart';
 import Order from './pages/order/Order';
+import Contacts from './pages/contacts/Contacts';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/delivery' element={<Delivery />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<Order/>}/>
+          <Route path='/contacts' element={<Contacts/>}/>
         </Routes>
 
       </div>
