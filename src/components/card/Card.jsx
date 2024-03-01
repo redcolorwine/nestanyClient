@@ -13,7 +13,7 @@ const Card = (props) => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart.cartItems)
     const [inCart, setInCart] = useState(false);
-
+    const srcImage = `http://localhost:5000/goods/pictures/${props.image}`;
     const onCartClick = () => {
         if (localStorage.getItem('userId')) {
             let uId = localStorage.getItem('userId');
@@ -38,7 +38,7 @@ const Card = (props) => {
 
     return (
         <div className={cmedia.card} >
-            <img src={anyImg} alt="" onClick={() => history(`/items/${props.id}`)} />
+            <img src={srcImage} alt="" onClick={() => history(`/items/${props.id}`)} />
             <h2>{props.type} {props.name}</h2>
             <div className={cmedia.priceBox}>
                 <h3>{props.price}p</h3>

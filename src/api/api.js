@@ -28,7 +28,11 @@ export const authAPI = {
                 throw new Error(err.response.data.message)
             });
     },
-
+    getLocation(latitude, longitude) {
+        return axios.get(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&lang=ru&apiKey=d796dca1a92f437ea39e77d1dbca354d`).then(response => {
+            return response;
+        })
+    }
 }
 
 export const userAPI = {

@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logoutThunk } from '../../redux_store/authReducer';
 import Modal from 'react-modal';
 import { userAPI } from '../../api/api';
+import LocationComponent from '../locationComponent/LocationComponent';
+
 
 const customStyles = {
     content: {
@@ -73,9 +75,13 @@ const Header = (props) => {
 
     return (
         <div className={cmedia.header}>
+
             <div className={cmedia.logo}>
+
                 <h2>nestany</h2>
+                <LocationComponent />
             </div>
+
             <div>
                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}>
                     {modalContent}
@@ -90,8 +96,8 @@ const Header = (props) => {
             </nav>
             <div className={cmedia.authBlock}>
                 {email
-                    ? <div className={cmedia.auth}><NavLink to="">{email}</NavLink> <img onClick={() => openModal()} className={cmedia.logButton} src={logoutImg} alt="" /> <img src={cartImg} onClick={()=>history('/cart')} alt="" /></div>
-                    : <div className={cmedia.auth}><NavLink to="">Вход/Авторизация</NavLink> <img onClick={() => logBut()} className={cmedia.logButton} src={loginImg} alt="" /> <img src={cartImg} onClick={()=>history('/cart')} alt="" /></div>
+                    ? <div className={cmedia.auth}><NavLink to="">{email}</NavLink> <img onClick={() => openModal()} className={cmedia.logButton} src={logoutImg} alt="" /> <img src={cartImg} onClick={() => history('/cart')} alt="" /></div>
+                    : <div className={cmedia.auth}><NavLink to="">Вход/Авторизация</NavLink> <img onClick={() => logBut()} className={cmedia.logButton} src={loginImg} alt="" /> <img src={cartImg} onClick={() => history('/cart')} alt="" /></div>
                 }
                 {authModule && <AuthModule cancelModule={cancelModule} />}
             </div>

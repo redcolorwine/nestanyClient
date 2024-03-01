@@ -77,6 +77,8 @@ export const login = (email, password) => {
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('user', response.data.email)
             localStorage.setItem('userId', response.data.userId)
+            localStorage.setItem('roles', response.data.roles[0].value)
+            console.log(response.data)
             dispatch(setIsAuth(true));
             dispatch(setLoading(false));
         }).catch(error => {

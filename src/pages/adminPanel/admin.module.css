@@ -1,0 +1,73 @@
+.admin {}
+
+.admin>h2 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.adminWrapper {
+    margin: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.createGoods {
+    /* margin: 20px 0px 20px 20px; */
+}
+
+.createGoods form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px;
+    width: 400px;
+    background-color: rgb(235, 231, 231);
+}
+
+.createGoods form input, label, textarea {
+    display: block;
+}
+
+.createGoods form input[type='text'], .createGoods form input[type='button'] {
+    height: 30px;
+}
+
+.createGoods form input[type='button'] {
+    background-color: red;
+    color: white;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.createGoods form textarea {
+    resize: none;
+}
+
+.deleteGoods>form input, label {
+    display: block;
+}
+
+.deleteGoods>form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px;
+    width: 400px;
+    background-color: rgb(235, 231, 231);
+}
+
+.deleteGoods form input[type='button'] {
+    background-color: red;
+    color: white;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.deleteGoods form input[type='text'], .deleteGoods form input[type='button'] {
+    height: 30px;
+}

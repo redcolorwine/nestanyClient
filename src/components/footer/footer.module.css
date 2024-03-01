@@ -10,6 +10,10 @@
     /* height: 200px; */
 }
 
+.footer>nav {
+    /* align-self: auto; */
+}
+
 .logo {
     align-self: center;
 }
@@ -18,18 +22,18 @@
     color: red;
 }
 
-.contacts {
+.contactsFooter {
     display: block;
 }
 
 
 
-.menu h4, .contacts h4 {
+.menu h4, .contactsFooter h4 {
     margin-bottom: 10px;
     color: red;
 }
 
-.contacts li {
+.contactsFooter li {
     display: block;
     font-size: 10pt;
 }

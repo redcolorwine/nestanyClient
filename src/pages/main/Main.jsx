@@ -14,7 +14,7 @@ const Main = forwardRef((props, ref) => {
     const [filterClothe, setFilter] = useState('');
 
     useEffect(() => {
-        dispatch(getCardsThunk(30, 0));
+        dispatch(getCardsThunk(40, 0));
     }, [])
 
     if (!cardsData) {

@@ -1,0 +1,18 @@
+.foundItem {
+    height: auto;
+    width: 220px;
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 5px 0px gray;
+}
+
+.foundItem>img {
+    height: 220px;
+    width: 220px;
+}
+
+.foundItem>h2 {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}

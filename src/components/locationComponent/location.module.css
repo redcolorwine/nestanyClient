@@ -1,0 +1,24 @@
+.location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location p {
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+.location p:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.choseCity {
+    transition: 0.3s;
+}
+
+.choseCity:hover {
+    color: red;
+    cursor: pointer;
+}

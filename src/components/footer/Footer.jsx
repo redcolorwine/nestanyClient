@@ -29,7 +29,7 @@ const Footer = () => {
 
             </div>
 
-            <nav className={cmedia.contacts}>
+            <nav className={cmedia.contactsFooter}>
                 <h4>Контакты</h4>
                 <li>почта: nestanyshop@gmail.com</li>
                 <li>телефон: +7 (934) 123-23-34</li>

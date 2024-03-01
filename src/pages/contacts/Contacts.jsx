@@ -37,7 +37,7 @@ const Contacts = () => {
 
     return (
         <div className={cmedia.contacts}>
-            <h1>Контакты</h1>
+            <h2>Контакты</h2>
             <div className={cmedia.main}>
                 <div className={cmedia.address}>
                     <h4>Магазин современной одежды Nestany</h4>
