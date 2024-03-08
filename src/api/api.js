@@ -76,6 +76,16 @@ export const goodsAPI = {
             throw new Error(err.response.data.message)
         });
     },
+    addGoods(id, name, type, brand, price, description, img) {
+        return instance.post(`/goods/add`, { id, name, type, brand, price, description, img }).then(response => {
+            return response.data;
+        })
+    },
+    deleteGoodById(id) {
+        return instance.post(`/goods/delete`, { id }).then(response => {
+            return response.data;
+        })
+    },
     deleteCartItem(cartId) {
         return instance.delete(`/cart/one/${cartId}`).then(response => {
             return response;

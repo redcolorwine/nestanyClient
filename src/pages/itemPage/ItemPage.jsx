@@ -11,6 +11,7 @@ const ItemPage = (props) => {
     const currentCard = cardInfo.filter(card => card.id == id)
     const oneCard = useSelector(state => state.main.oneCard)
     const dispatch = useDispatch();
+    
     console.log(currentCard);
     useEffect(() => {
         dispatch(getCardById(id))
@@ -21,7 +22,9 @@ const ItemPage = (props) => {
             <div> ...загрузка</div>
         )
     }
+    
     else {
+        const srcImage = `http://localhost:5000/goods/pictures/${oneCard.img}`;
         console.log(oneCard)
         return (
             // <div className={cmedia.itemPage}>
@@ -40,7 +43,7 @@ const ItemPage = (props) => {
             <div className={cmedia.itemPage}>
                 <h2>{oneCard.type} {oneCard.brand} {oneCard.name}</h2>
                 <div className={cmedia.image_descr}>
-                    <img src={oneCard.image ? oneCard.image : noimage} alt="" />
+                    <img src={oneCard.img ? srcImage : noimage} alt="" />
                     <div className={cmedia.descrBlock}>
                         <h3>{oneCard.name}</h3>
                         <button className={cmedia.butButton}>Купить</button>
