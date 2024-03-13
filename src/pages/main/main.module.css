@@ -41,3 +41,93 @@
     justify-content: space-around;
     gap: 30px;
 }
+
+
+/* Large desktops and laptops */
+@media (max-width: 1459px) {
+    .catalog nav {
+        margin: 5px;
+    }
+
+    .catalog nav li {
+        padding: 5px 5px 5px 5px;
+        font-size: 10pt;
+    }
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .catalog nav {
+        margin: 5px;
+    }
+
+    .catalog nav li {
+        padding: 5px 5px 5px 5px;
+        font-size: 10pt;
+    }
+
+    .catalog nav li {
+        list-style: none;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .catalog nav {
+        margin: 5px;
+        flex-wrap: wrap;
+    }
+
+    .catalog nav li {
+        padding: 5px 5px 5px 5px;
+        font-size: 10pt;
+    }
+
+    .catalog nav li {
+        list-style: none;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .logoBlock {
+        height: 500px;
+        width: 100%;
+    }
+
+    .logoBlock h1 {
+        font-size: 40pt;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+    .catalog nav {
+        margin: 5px;
+        flex-wrap: wrap;
+    }
+
+    .catalog nav li {
+        padding: 5px 5px 5px 5px;
+        font-size: 10pt;
+    }
+
+    .catalog nav li {
+        list-style: none;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .logoBlock {
+        height: 500px;
+        width: 100%;
+    }
+
+    .logoBlock h1 {
+        font-size: 40pt;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+    }
+}

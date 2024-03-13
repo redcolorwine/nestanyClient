@@ -26,6 +26,9 @@
     gap: 40px;
     margin: 40px;
     color: white;
+    color: black;
+    background-color: white;
+    padding: 25px;
 }
 
 .itemPage h3 {
@@ -44,3 +47,73 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+@media (max-width: 1459px) {}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .image_descr img {
+        width: 800px;
+        height: 700px;
+        object-fit: cover;
+    }
+
+    .image_descr {
+        display: flex;
+        gap: 40px;
+        margin: 40px;
+        color: black;
+        background-color: white;
+        padding: 25px;
+    }
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .image_descr img {
+        width: 500px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .image_descr {
+        display: flex;
+        padding: 25px;
+        gap: 40px;
+        margin: 40px;
+        color: black;
+        background-color: white;
+        padding: 25px;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .image_descr {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 40px;
+        color: white;
+    }
+    .image_descr img {
+        width: 90%;
+        margin: 0 auto;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .image_descr {
+        display: flex;
+        padding: 25px;
+        gap: 40px;
+        margin: 40px;
+        color: black;
+        background-color: white;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {}

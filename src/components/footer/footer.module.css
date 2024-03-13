@@ -46,3 +46,74 @@
 .bothFooter p {
     font-size: 10pt;
 }
+
+
+@media (max-width: 1300px) {}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+    .menu h4, .contactsFooter h4 {
+        margin-bottom: 10px;
+        color: red;
+    }
+
+    .contactsFooter li {
+        font-size: 9pt;
+    }
+
+    .bothFooter {
+        gap: 10px;
+    }
+
+    .bothFooter p {
+        font-size: 9pt;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .footer {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .logo {
+        align-self: center;
+    }
+
+    .contactsFooter {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .menu h4, .contactsFooter h4 {
+        margin-bottom: 10px;
+        color: red;
+        text-align: center;
+    }
+
+    .contactsFooter li {
+        display: block;
+        font-size: 10pt;
+    }
+
+    .bothFooter {
+        display: flex;
+        gap: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .bothFooter p {
+        font-size: 10pt;
+    }
+}

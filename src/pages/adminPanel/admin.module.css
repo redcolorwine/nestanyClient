@@ -88,3 +88,123 @@
     width: 400px;
     background-color: rgb(248, 247, 247);
 }
+
+@media (max-width: 1360px) {
+       
+    .createGoods form, .deleteGoods>form {
+        gap: 10px;
+        padding: 10px;
+        width: 500px;
+        font-size: 10pt;
+    }
+
+    .createGoods form input[type='text'], .createGoods form input[type='submit'], .deleteGoods form input[type='submit'], .deleteGoods form input[type='text'] {
+        height: 30px;
+    }
+
+    .deleteGoods form select{
+        height: 30px;
+    }
+
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .createGoods form, .deleteGoods>form {
+        width: 350px;
+    }
+
+    .createGoods form input[type='text'], .createGoods form input[type='submit'], .deleteGoods form input[type='submit'], .deleteGoods form input[type='text'] {
+        height: 30px;
+    }
+
+    .deleteGoods form select{
+        height: 30px;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (max-width: 991px) {
+    
+    .adminWrapper {
+        margin: 20px 20px 20px 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 100px;
+        text-align: center;
+    }
+    
+    
+    .createGoods form, .deleteGoods form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        width: 100%;
+        background-color: rgb(248, 247, 247);
+    }
+    
+    .createGoods label, .deleteGoods label {
+        color: rgb(163, 157, 157);
+    }
+    
+    .createGoods form input, label, textarea {
+        display: block;
+    }
+    
+    .createGoods form input[type='text'], .createGoods form input[type='submit'], .deleteGoods form input[type='submit'], .deleteGoods form input[type='text'] {
+        height: 30px;
+        border: none;
+        border-bottom: 2px solid rgb(199, 197, 197);
+        background-color: rgb(248, 247, 247);
+        outline: none;
+    }
+    
+    .createGoods form input[type='submit'], .deleteGoods form input[type='submit'] {
+        background-color: red;
+        color: white;
+        border: none;
+        font-weight: 900;
+        cursor: pointer;
+    }
+    
+    .createGoods form textarea {
+        resize: none;
+        border-radius: 15px;
+        border-color: rgb(199, 197, 197);
+        outline: none;
+        padding: 10px;
+    }
+    
+    .createGoods input[type="file"]::file-selector-button {
+        background-color: rgb(199, 197, 197);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        padding: 5px;
+    }
+    
+    .deleteGoods>form input, label {
+        display: block;
+    }
+    .deleteGoods form select{
+        height: 30px;
+        border: none;
+        border-bottom: 2px solid rgb(199, 197, 197);
+        background-color: rgb(248, 247, 247);
+        outline: none;
+    }
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {}

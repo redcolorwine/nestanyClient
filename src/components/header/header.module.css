@@ -67,3 +67,190 @@
 .auth img:hover {
     transform: scale(1.07, 1.07);
 }
+
+
+/* Large desktops and laptops */
+@media (max-width: 1300px) {
+    .header {
+        margin: 15px 40px 15px 40px;
+    }
+
+    .header h2 {
+        font-size: 20pt;
+    }
+
+    .logo {
+        gap: 20px;
+    }
+
+    .header>nav {
+        gap: 10px;
+    }
+
+    .header>nav li a {
+        font-size: 14pt;
+    }
+
+    .auth {
+        font-size: 10pt;
+    }
+
+    .auth img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header {
+        margin: 15px 20px 15px 20px;
+    }
+
+    .header h2 {
+        font-size: 17pt;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .header>nav {
+        gap: 10px;
+    }
+
+    .header>nav li a {
+        font-size: 10pt;
+    }
+
+    .auth {
+        font-size: 10pt;
+    }
+
+    .auth img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .header {
+        margin: 15px 2px 15px 2px;
+    }
+
+    .header h2 {
+        font-size: 13pt;
+    }
+
+    .logo {
+        gap: 5px;
+    }
+
+    .header>nav {
+        gap: 5px;
+    }
+
+    .header>nav li a {
+        font-size: 8pt;
+    }
+
+    .auth {
+        font-size: 8pt;
+    }
+
+    .auth img {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0px;
+        margin: 10px 20px 10px 20px;
+    }
+
+    .header h2 {
+        font-size: 25pt;
+        order: 2;
+        padding: 0;
+        margin: 0;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items: center;
+    }
+
+    .header>nav {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        align-self: center;
+        margin: 10px auto 10px auto;
+    }
+
+    .header>nav li {
+        display: inline;
+
+    }
+
+    .header>nav li a {
+        text-decoration: none;
+        color: black;
+        font-size: 12pt;
+        font-weight: 900;
+    }
+
+    .header>nav li a:hover {
+        color: red;
+    }
+
+    .auth {
+        font-size: 10pt;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .auth a {
+        text-decoration: none;
+        color: red;
+    }
+
+    .auth img {
+
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .header>nav {
+        gap: 10px;
+        flex-direction: column;
+        margin: 10px auto 10px auto;
+    }
+
+    .header>nav li {
+        display: inline;
+
+    }
+
+    .header>nav li a {
+        text-decoration: none;
+        color: black;
+        font-size: 14pt;
+        font-weight: 700;
+    }
+}

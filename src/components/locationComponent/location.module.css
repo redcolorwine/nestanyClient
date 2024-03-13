@@ -22,3 +22,27 @@
     color: red;
     cursor: pointer;
 }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .location {
+        gap: 10px;
+    }
+
+    .location p {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 767px) {
+    .location {
+        gap: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .location p {
+        font-size: 9pt;
+    }
+    .location {
+        gap: 3px;
+    }
+}

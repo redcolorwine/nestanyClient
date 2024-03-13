@@ -54,14 +54,14 @@ const Contacts = () => {
                     <hr />
                     <form onSubmit={sendEmail}>
                         <label htmlFor="name">Имя</label>
-                        <input type="text" name="user_name" id="userName" value={uname} onChange={(e) => setUname(e.target.value)} />
+                        <input type="text" name="user_name" id="userName" value={uname} onChange={(e) => setUname(e.target.value)} required/>
                         <label htmlFor="phone">Телефон</label>
-                        <input type="text" name="phone_From" id="phoneFrom" value={num} onChange={(e) => setNum(e.target.value)} />
+                        <input type="text" name="phone_From" id="phoneFrom" value={num} onChange={(e) => setNum(e.target.value)} required/>
                         <label htmlFor="email">E-mail</label>
-                        <input type="email" name="email_from" id="emailFrom" value={uemail} onChange={(e) => setUemail(e.target.value)} />
-                        <textarea name="message" id="message" rows="10" placeholder='Введите сообщение' value={mes} onChange={(e) => setMes(e.target.value)}> </textarea>
+                        <input type="email" name="email_from" id="emailFrom" value={uemail} onChange={(e) => setUemail(e.target.value)} required/>
+                        <textarea name="message" id="message" rows="10" placeholder='Введите сообщение' value={mes} onChange={(e) => setMes(e.target.value)} required> </textarea>
                         <div className={cmedia.agree}>
-                            <input type="checkbox" name="ck" id="" defaultChecked={checked} onChange={() => setChecked(!checked)} />
+                            <input type="checkbox" name="ck" id="" defaultChecked={checked} onChange={() => setChecked(!checked)} required/>
                             <label htmlFor="ck">Согласен с обработкой персональных данных</label>
                         </div>
 

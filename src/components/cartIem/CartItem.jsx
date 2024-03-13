@@ -16,7 +16,7 @@ const CartItem = (props) => {
     const updatedTotalPrice = useSelector(state => state.cart.updatedTotalPrice)
     const [itemPrice, setPrice] = useState(props.price);
     const [countItem, setCount] = useState(props.count);
-
+    const srcImage = `http://localhost:5000/goods/pictures/${props.image}`;
     const deleteButton = async () => {
         console.log(isLoading)
         await dispatch(deleteCartItemThunk(props.cartId));
@@ -65,7 +65,7 @@ const CartItem = (props) => {
     }
     return (
         <div className={cmedia.cartItem}>
-            <img src={cartImg} alt="" />
+            <img src={srcImage} alt="" />
             <div className={cmedia.itemAbout}>
                 <div className={cmedia.cartName}>
                     <h4>{props.name}</h4>
