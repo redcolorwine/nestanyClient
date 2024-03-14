@@ -14,29 +14,24 @@ import Contacts from './pages/contacts/Contacts';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutThunk } from './redux_store/authReducer';
 import AdminPanel from './pages/adminPanel/AdminPanel';
-// const parseJwt = (token) => {
-//   try {
-//     return JSON.parse(atob(token.split(".")[1]));
-//   } catch (e) {
-//     return null;
-//   }
-// };
+import { jwtDecode } from 'jwt-decode';
 
-// const AuthVerify = (props) => {
-//   props.history.listen(() => {
-//     const user = JSON.parse(localStorage.getItem("user"));
 
-//     if (user) {
-//       const decodedJwt = parseJwt(user.accessToken);
+const AuthVerify = (props) => {
+  props.history.listen(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
 
-//       if (decodedJwt.exp * 1000 < Date.now()) {
-//         props.logOut();
-//       }
-//     }
-//   });
+    if (user) {
+      const decodedJwt = jwtDecode(user.accessToken);
 
-//   return <div></div>;
-// };
+      if (decodedJwt.exp * 1000 < Date.now()) {
+        props.logOut();
+      }
+    }
+  });
+
+  return <div></div>;
+};
 
 function App() {
 
@@ -44,27 +39,18 @@ function App() {
   const authData = useSelector(state => state.auth.authData);
   const resultRef = useRef(null);
 
-  const parseJwt = (token) => {
-    try {
-      return JSON.parse(atob(token.split(".")[1]));
-    } catch (e) {
-      return null;
-    }
-  };
 
-  // useEffect(() => {
-  //   const user = localStorage.getItem("user");
-  //   const gotToken = localStorage.getItem("token");
-  //   if (user) {
-  //     const decodedJwt = parseJwt(gotToken);
-  //     // console.log(decodedJwt.exp * 1000)
-  //     // console.log(Date.now())
-  //     if (decodedJwt.exp * 1000 < Date.now()) {
-  //       console.log('Срок действия токена истёк')
-  //       dispatch(logoutThunk());
-  //     }
-  //   }
-  // }, [authData])
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    const gotToken = localStorage.getItem("token");
+    if (user) {
+      const decodedJwt = jwtDecode(gotToken);
+      if (decodedJwt.exp * 1000 < Date.now()) {
+        console.log('Срок действия токена истёк')
+        dispatch(logoutThunk());
+      }
+    }
+  }, [authData])
 
   return (
     <div className="App">

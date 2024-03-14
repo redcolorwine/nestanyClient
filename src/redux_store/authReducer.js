@@ -106,12 +106,16 @@ export const register = (email, password) => {
     }
 }
 
-export const logoutThunk = () => {
+export const logoutThunk = (userId) => {
 
     return (dispatch) => {
-        localStorage.clear()
-        dispatch(setAuth(''))
-        dispatch(setIsAuth(false));
+        authAPI.logout(userId).then(response => {
+            dispatch(setAuth(response.data))
+            dispatch(setIsAuth(false));
+            localStorage.clear()
+        })
+        
+
     }
 }
 

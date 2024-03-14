@@ -17,6 +17,13 @@ export const authAPI = {
             throw new Error(err.response.data.message)
         });
     },
+    logout(userId) {
+        return instance.post('auth/logout', { userId }).then(response => {
+            return response;
+        }).catch(err => {
+            throw new Error(err.response.data.message)
+        });
+    },
     register(email, password) {
 
         return instance.post('auth/register', { email, password })

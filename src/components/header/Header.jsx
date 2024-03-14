@@ -30,13 +30,16 @@ const Header = (props) => {
     const [authModule, setAuthModule] = useState(false);
     const [email, setEmail] = useState('');
     const isAuth = useSelector(state => state.auth.isAuth);
+    const authData = useSelector(state => state.auth.authData);
     const dispatch = useDispatch();
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const logout = () => {
-        dispatch(logoutThunk());
+        const userId = localStorage.getItem('userId');
+        dispatch(logoutThunk(userId));
         setModalIsOpen(false);
     }
+
     const openModal = () => {
         setModalIsOpen(true);
     };
@@ -71,7 +74,8 @@ const Header = (props) => {
         } else {
             setEmail('')
         }
-    }, [isAuth])
+        console.log(authData);
+    }, [authData])
 
     return (
         <div className={cmedia.header}>
